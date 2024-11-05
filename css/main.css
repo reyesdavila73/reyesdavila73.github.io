@@ -1,0 +1,86 @@
+:root{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: gradiant(red, blue);
+}
+
+#laracon{
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
+}
+
+header{
+    border-bottom: 1px solid black;
+    row-gap: 10px;
+}
+.tr-columns{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* position: absolute;
+    top: 0;
+    margin-bottom: 110px; */
+    div{
+        margin: auto;
+    }
+}
+.title{
+    font-size: 50px;
+    font-weight: 700;
+    /* text-align: center; */
+}
+.main{
+    display: flex;
+    width: 100%;
+    border-bottom: solid 1px black;
+    /* ite */
+}
+.carnival{
+    /* width: 100%; */
+    margin: 20px;
+    flex-basis: 40%;
+    /* height: 50%; */
+    /* flex-basis: 1fr; */
+    background-color: green;
+}
+.widget{
+    flex-basis: 60%;
+    padding: 20px;
+    background-color: gray;
+}
+.offer-head{
+    background-color: gray;
+}
+.center{
+    text-align: center;
+}
+.cards-container{
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(5, 1fr);
+
+}
+.item{
+    background-color: green;
+    /* height: 00px; */
+    aspect-ratio: 1/1.5;
+    border-radius: 10px;
+    /* background: url('./../assets/image.png'); */
+    /* image-rendering: auto; */
+    /* size-adjust: auto; */
+}
+.anchors{
+    display: flex;
+    transition: all 0.6s;
+    a{
+        margin: auto;
+        padding: 10px;
+        text-decoration: none;
+        color: black;
+    }
+    a:hover{
+        color: rgb(99, 101, 102);
+    }
+}
+.product-card{
+    object-fit: cover;
+}

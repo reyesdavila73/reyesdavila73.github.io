@@ -16,9 +16,16 @@ header{
 .tr-columns{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    /* background-color: white; */
+    border-bottom: black solid 1px;
     /* position: absolute;
     top: 0;
     margin-bottom: 110px; */
+    position: fixed;
+    top: 0;
+    padding-top: 5px;
+    left: 0;
+    width: 100%;
     div{
         margin: auto;
     }
@@ -31,6 +38,7 @@ header{
 .main{
     display: flex;
     width: 100%;
+    margin-top: 70px;
     border-bottom: solid 1px black;
     /* ite */
 }
@@ -46,6 +54,10 @@ header{
     flex-basis: 60%;
     padding: 20px;
     background-color: gray;
+    margin: 5px 10px;
+}
+.rounded{
+    border-radius: 10px;
 }
 .offer-head{
     background-color: gray;
@@ -56,12 +68,19 @@ header{
 .cards-container{
     display: grid;
     gap: 10px;
-    grid-template-columns: repeat(5, 1fr);
+    /* grid-template-columns: repeat(5, 1fr); */
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
 
+    padding: 30px;
+    border: solid black 1px;
+    margin: 0px 10%;
+    border-radius: 10px;
+    grid-auto-flow: dense;
+    /* overflow-wrap:anywhere; */
 }
 .item{
     background-color: green;
-    /* height: 00px; */
+    /* height: 100px; */
     aspect-ratio: 1/1.5;
     border-radius: 10px;
     /* background: url('./../assets/image.png'); */
@@ -75,12 +94,79 @@ header{
         margin: auto;
         padding: 10px;
         text-decoration: none;
-        color: black;
+        color: white;
     }
     a:hover{
         color: rgb(99, 101, 102);
     }
 }
-.product-card{
-    object-fit: cover;
+.product-img{
+
+    background-size: cover;
+    /* width: 50%;
+    height: 50%;
+    margin: 20px auto; */
+    height: auto;
+    margin: 10px;
+    height: 150px;
+    border: solid black 1px;
+    border-radius: 10px;
+    /* background-color: aliceblue; */
+    /* imageCont.style.backgroundSize = 'contain'
+        imageCont.style.width = '50%'
+        imageCont.style.height = "50%"
+        imageCont.style.margin = '10px auto' */
+}
+
+.strong-bg{
+    background-color: #0c162d;
+}
+
+.gradient-blue{
+    background-color: linear-gradient(90deg, blue, #0c162d);
+    background: rgb(58, 57, 77);
+    color: white;
+    /* background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(79,79,144,1) 35%, rgba(0,212,255,1) 100%); */
+}
+.no-margin{
+    margin: 0;
+}
+@media screen and (max-width: 800px){
+    .anchors{
+        visibility: hidden;
+    }
+    #laracon{
+        visibility: hidden;
+    }
+    .tr-columns{
+        display: flex;
+        margin: auto;
+        height: 90px;
+    }
+    .home{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+    .carnival{
+        /* display: none; */
+        width: 100%;
+    }
+    .widget{
+        margin-top: 10px;
+        width: 100%;
+        flex-basis: 100%;
+        margin: 10px;
+        padding: 20px;
+    }
+    .cards-container{
+        gap: 10px;
+         /* grid-template-columns: repeat(5, 1fr); */
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        padding: 0px 15px;
+    }
+    .product-img{
+        margin: 5px;
+        height: 150px;
+    }
+    
 }

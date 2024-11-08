@@ -1,5 +1,5 @@
 //@ts-check
-class ProductCard {
+export default class ProductCard {
     name = ""
     desc = ""
     image = ""
@@ -9,26 +9,36 @@ class ProductCard {
      * @param {String} desc short description
      * @param {String} image path to .png file
      */
-    new(name, desc, image) {
+    constructor(name, desc, image) {
         this.name = name
         this.desc = desc
         this.image = image
-        let component = this.construct_component()
-        return component
+        this.component = this.construct_component()
     }
 
+    display(){
+        return this.component
+    }
+    /**
+     * 
+     * @returns HTMLDiv
+     */
     construct_component() {
         let base = document.createElement('div')
-        let title = document.createElement('h2')
+        let title = document.createElement('h3')
         let desc = document.createElement('p')
-        let image = document.createElement('img')
+        let imageCont = document.createElement('div')
+        // let image = document.createElement('img')
         title.textContent = this.name
         desc.textContent = this.desc
-        image.src = this.image
-        base.appendChild(image)
+        imageCont.style.backgroundImage = `url(${this.image})`
+        imageCont.classList.add('product-img')
+        title.classList.add('no-margin')
+        desc.classList.add('no-margin')
+        base.appendChild(imageCont)
         base.appendChild(title)
         base.appendChild(desc)
+        base.classList.add('item')
         return base
     }
 }
-export default ProductCard

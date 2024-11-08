@@ -3,20 +3,23 @@ export default class ProductCard {
     name = ""
     desc = ""
     image = ""
+    discount = 0
     /**
      * 
-     * @param {String} name 
-     * @param {String} desc short description
-     * @param {String} image path to .png file
+     * @param {Object} request 
+     * @opt {String} 
      */
-    constructor(name, desc, image) {
-        this.name = name
-        this.desc = desc
-        this.image = image
-        this.component = this.construct_component()
+    constructor(request) {
+        this.name = request.name
+        this.desc = request.desc
+        this.image = request.img
+        if (request.has_disc){
+            this.discount = request.discount
+        }
     }
 
     display(){
+        this.component = this.construct_component()
         return this.component
     }
     /**
@@ -28,6 +31,12 @@ export default class ProductCard {
         let title = document.createElement('h3')
         let desc = document.createElement('p')
         let imageCont = document.createElement('div')
+        if (this.discount) {
+            let discount = document.createElement('div')
+            discount.classList.add("discount")
+            discount.innerHTML = this.discount.toString() + "%"
+            base.appendChild(discount)
+        }
         // let image = document.createElement('img')
         title.textContent = this.name
         desc.textContent = this.desc
@@ -38,6 +47,7 @@ export default class ProductCard {
         base.appendChild(imageCont)
         base.appendChild(title)
         base.appendChild(desc)
+        
         base.classList.add('item')
         return base
     }

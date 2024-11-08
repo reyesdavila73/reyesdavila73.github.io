@@ -131,6 +131,15 @@ header{
 .no-margin{
     margin: 0;
 }
+.discount{
+    background-color: red;
+    color: white;
+    width: 100%;
+    top: 0;
+    align-self: center;
+    border-radius: 10px 10px 0 0;
+    padding: 2px 0;
+}
 @media screen and (max-width: 800px){
     .anchors{
         visibility: hidden;

@@ -6,7 +6,6 @@ export class BaseService {
     /**
      * 
      * @param {Object} params 
-     * @
      */
     getAll(params) {
         //...

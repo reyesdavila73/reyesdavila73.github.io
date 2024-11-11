@@ -3,13 +3,14 @@
     background-color: gradiant(red, blue);
     /* background: #; */
     --strong-bg: #4c7766;
-    --light-bg: #6d9c89;
+    --light-bg: #70a08d;
     --white-bg:#EBE6E0;
     --deep-blue:#3a6151;
     --black-st:#0c162d;
     --black-st:#3b4250;
     --light-green:#36f1a6;
     --gray-layer:#3b42507a;
+    --light-purple: #856fa8f1;
 }
 
 nav {
@@ -94,16 +95,71 @@ header{
 .carnival{
     /* width: 100%; */
     margin: 20px;
-    flex-basis: 40%;
-    /* height: 50%; */
-    /* flex-basis: 1fr; */
-    background-color: green;
+    flex-basis: 60%;
+    display: grid;
+    grid-auto-flow: column;
+    scroll-behavior: auto;
+    gap:1.2em ;
+    overflow-y: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
 }
-
+.categorie-link{
+    width: 400px;
+    display: block;
+    background-color: var(--white-bg);
+    padding: 18px;
+    border-radius: 10px;
+    box-shadow: 0 10px 10px rgb(0, 0, 0, 0.05);
+    transition: .5s ease;
+    /* background-color: var(--black-st); */
+}
+.categorie-link:hover{
+    border: solid var(--strong-bg) 1px;
+}
+.categorie-item{
+    text-decoration: none;
+    margin: 0 15px;
+    list-style: none;
+}
+@keyframes slide {
+    from {
+        transform: translateX(0);
+    } to {
+        transform: translateX(-100%);
+    }
+}
+.cat-list{
+    display: inline-flex;
+    overflow: hidden;
+    scroll-behavior: auto;
+    animation: 15s slide infinite linear;
+}
+.cat-wrap{
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border-radius: 10px;
+    margin: 2px;
+}
+.categorie-name{
+    margin: 10px 2px 14px;
+    color: var(--white-bg);
+    background-color: var(--light-purple);
+    width: fit-content;
+    font-weight: 700;
+    padding: 4px 20px;
+    border-radius: 50px;
+}
+/* 
 .carnival {
     flex-basis: 60%;
+} */
+.prod-head{
+    color: var(--white-bg);
+    font-size: xx-large;
 }
-
 .flex-b-70{
     flex-basis: 70%;
 
@@ -121,6 +177,7 @@ header{
 .offer-head{
     /* background-color: gray; */
     background-color: var(--strong-bg);
+    padding: 5px;
 
 }
 

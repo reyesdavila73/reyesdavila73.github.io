@@ -66,6 +66,8 @@ header{
 .tr-columns{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    z-index: 999;
+
     /* background-color: white; */
     border-bottom: black solid 1px;
     /* position: absolute;
@@ -134,7 +136,7 @@ header{
     display: inline-flex;
     overflow: hidden;
     scroll-behavior: auto;
-    animation: 15s slide infinite linear;
+    animation: 16s slide infinite linear;
 }
 .cat-wrap{
     width: 100%;
@@ -211,7 +213,7 @@ header{
 
     padding: 30px;
     border: solid black 1px;
-    margin: 0px 10%;
+    margin: 5px 10%;
     border-radius: 10px;
     grid-auto-flow: dense;
     /* overflow-wrap:anywhere; */

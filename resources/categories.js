@@ -13,5 +13,15 @@ export default [
         "id":3,
         "name":"sets completos",
         "image":"assets/categories/complete_setup.jpg"
+    },
+    {
+        "id":4,
+        "name":"accesorios celulares",
+        "image":"assets/categories/phone_accesories.jpg"
+    },
+    {
+        "id":5,
+        "name":"cotizaciones",
+        "image":"assets/categories/cotizaciones.jpg"
     }
 ]

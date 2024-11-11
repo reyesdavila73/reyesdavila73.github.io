@@ -1,0 +1,158 @@
+
+:root {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #EBE6E0;
+    margin: 0px;
+    padding: 0;
+}
+
+@font-face {
+    font-family: "ibrand";
+    src: url("../assets/ibrand.otf");
+}
+
+.font-ibrand{
+    font-family: "ibrand";
+}
+
+.font-xlarge{
+    font-size: x-large;
+}
+
+#laracon {
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
+}
+
+header {
+    /* border-bottom: 1px solid black; */
+    box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.253);
+    row-gap: 10px;
+    /* position: fixed; */
+}
+
+.tr-columns {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    /* position: absolute;
+    top: 0;
+    margin-bottom: 110px; */
+    div {
+        margin: auto;
+    }
+}
+
+.spacing-3{
+    letter-spacing: 3.5px;
+}
+
+.bg-white {
+    background: #EBE6E0;
+}
+
+.bg-green {
+    background: #4C7766;
+}
+
+.title {
+    font-size: 50px;
+    font-weight: 700;
+    /* text-align: center; */
+}
+
+.main {
+    display: flex;
+    width: 100%;
+    /* border-bottom: solid 1px black; */
+    /* ite */
+}
+
+.carnival {
+    flex-basis: 60%;
+}
+
+.flex-b-70{
+    flex-basis: 70%;
+
+}
+
+.widget {
+    flex-basis: 60%;
+    padding: 20px;
+    /* background-color: gray; */
+}
+
+.offer-head {
+    background-color: #4C7766;
+    height: 80px;
+}
+
+.center {
+    text-align: center;
+}
+
+.flex{
+    display: flex;
+}
+
+.spc-even{
+justify-content: space-evenly;
+}
+
+.items-center{
+    align-items: center;
+}
+
+.cards-container {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(5, 1fr);
+
+}
+
+.item {
+    background-color: #4C7766;
+    /* height: 00px; */
+    margin: 5px;
+    aspect-ratio: 1/1.5;
+    border-radius: 10px;
+    /* background: url('./../assets/image.png'); */
+    /* image-rendering: auto; */
+    /* size-adjust: auto; */
+}
+
+.item:hover{
+    transition: all 0.3s;;
+    background: #36f1a6;
+}
+
+.margin-top-5{
+    margin-top: 5px;
+}
+
+.anchors {
+    display: flex;
+    /* transition: all 0.6s; */
+
+    a {
+        margin: auto;
+        padding: 35px;
+        text-decoration: none;
+        color: black;
+        cursor: default;
+    }
+
+    span:hover {
+        transition: all 0.3s;
+        color: #EBE6E0;
+        margin: auto;
+        cursor: pointer;
+    }
+}
+
+.product-card {
+    object-fit: cover;
+}

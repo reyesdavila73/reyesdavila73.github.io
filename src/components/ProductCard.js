@@ -31,6 +31,7 @@ export default class ProductCard {
         let title = document.createElement('h3')
         let desc = document.createElement('p')
         let imageCont = document.createElement('div')
+        let wrapper = document.createElement('div')
         if (this.discount) {
             let discount = document.createElement('div')
             discount.classList.add("discount")
@@ -44,10 +45,11 @@ export default class ProductCard {
         imageCont.classList.add('product-img')
         title.classList.add('no-margin')
         desc.classList.add('no-margin')
-        base.appendChild(imageCont)
-        base.appendChild(title)
-        base.appendChild(desc)
-        
+        wrapper.appendChild(imageCont)
+        wrapper.appendChild(title)
+        wrapper.appendChild(desc)
+        wrapper.classList.add('card-wrapp')
+        base.append(wrapper)
         base.classList.add('item')
         return base
     }

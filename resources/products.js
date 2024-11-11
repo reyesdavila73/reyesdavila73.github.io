@@ -6,7 +6,7 @@ export default [
         "desc":"una compu super guay",
         "img":"",        
         "has_disc":true,
-        "discount":15
+        "discount":15,
     },
     {
         "id":2,
@@ -30,6 +30,22 @@ export default [
         "desc":"una compu super guay",
         "img":"",        
         "has_disc":true,
+        "discount":5
+    },
+    {
+        "id":5,
+        "name":"Raton",
+        "desc":"una raton super guay",
+        "img":"",        
+        "has_disc":true,
+        "discount":5
+    },
+    {
+        "id":5,
+        "name":"Raton",
+        "desc":"una raton super guay",
+        "img":"",        
+        "has_disc":false,
         "discount":5
     }
 ]

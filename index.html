@@ -3,17 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="./css/main.css">
     <title>PCShop</title>
 </head>
 <body>
     <header>
-        <nav class="tr-columns gradient-blue gradient-blue">
+        <nav class="tr-columns bg-green topnav" id="navbar">
             <div class="icon">
                 <img src="./assets/image.png" alt="not-found" id="laracon">
             </div>
-            <div class="title">PCShop</div>
-            <div class="anchors">
+            <div class="title title spacing-3">PCShop</div>
+            <div class="anchors font-xlarge">
+                <a href="javascript:void(0);" class="icon" onclick="showAnchors()">
+                    <i class="fa fa-bars"></i>
+                </a>
                 <a href="">
                     <span>About Us</span>
                 </a>
@@ -28,7 +32,7 @@
     </header>
     <br>
     <div class="main home">
-        <div class="carnival"></div>
+        <div class="carnival flex-b-70"></div>
         <div class="widget rounded">
             <h1>Lets explore some new products!</h1>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis itaque delectus, obcaecati atque perspiciatis tempora illum expedita ipsam eum vitae modi tempore. Autem numquam nisi dolores, maxime laborum minima tempora?
@@ -40,11 +44,17 @@
         <h1 class="subtitle">Hello this is a Subtitle, u can always trust in BigMamma</h1>
         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsum ullam sunt quae eos, porro veniam nihil exercitationem officia cumque quos sint quis nulla minus tenetur itaque laboriosam impedit eligendi. Quia.
         Sunt repudiandae odio laudantium vitae ea molestias ex, ducimus laboriosam facere fuga adipisci tempore. Laborum sed hic vero alias dicta aliquid debitis, odio vel deleniti, possimus suscipit id fuga similique.</p>
-        <div class="offer-head center">
-            <h2>Offers of the day</h2>
-            <h2>Hot sale</h2>
+        <div class="offer-head flex spc-even items-center">
+            <!-- <h2>Offers of the day</h2> -->
+            <!-- <h2>Hot sale</h2> -->
+            <h2>Productos destacados</h2>
+            <div class="flex">
+                <span class="">Buscar</span>
+                <input type="text">
+            </div>
+
         </div>
-        <div class="cards-container" id="prodWrap">
+        <div class="cards-container margin-top-5" id="prodWrap">
         </div>
     </div>
     <script src="./src/app.js" type="module"></script>

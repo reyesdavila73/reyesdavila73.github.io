@@ -12,7 +12,10 @@
     --gray-layer:#3b42507a;
     --light-purple: #856fa8f1;
 }
-
+.bg-navigation{
+    height: 110px;
+    width: 100%;
+}
 nav {
     overflow: hidden;
     .anchors a.icon{

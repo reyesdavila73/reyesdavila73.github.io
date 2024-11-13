@@ -5,10 +5,13 @@ import { ProductService } from './services/product-service.js';
 
 import CategorieCarr from './components/CategorieCar.js';
 import { CategoriesService } from './services/categories-services.js'
+import categories from '../resources/categories.js';
+import FilterBar from './components/FilterBars.js';
 const ProductWrapper = document.getElementById('prodWrap')
 const Navigation = document.getElementById('navbar')
 const Carnival = document.getElementById('carnival')
- 
+const Filters = document.getElementById('filter-list')
+
 const showCategories = () => {
     let categorias = CategoriesService.getSample()
     for (let cat = 0; cat < categorias.length; cat++) {
@@ -34,10 +37,19 @@ const showAnchors = () => {
 }
 const showProducts = () => {
     let productos = ProductService.getSample()
-for (let index = 0; index < productos.length; index++) {
-    let element = new ProductCard(productos[index]);
-    ProductWrapper?.appendChild(element.display())
+    for (let index = 0; index < productos.length; index++) {
+        let element = new ProductCard(productos[index]);
+        ProductWrapper?.appendChild(element.display())
+    }
 }
+
+const showFilters = () =>{
+    let filters = CategoriesService.getSample()
+    for (let index = 0; index < filters.length; index++) {
+        console.log('new filter')
+        let element = new FilterBar(filters[index]);
+        Filters?.appendChild(element.display())        
+    }
 }
 Navigation?.addEventListener('click', showAnchors)
 
@@ -46,4 +58,6 @@ window.onload = () => {
     console.log("start on load app...")
     showProducts()
     showCategories()
+    showFilters()
 }
+

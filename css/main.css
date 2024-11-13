@@ -4,13 +4,15 @@
     /* background: 83AF9E#; */
     --strong-bg: #83AF9E;
     --light-bg: #76A793;
-    --white-bg:#EBE6E0;
+    --white-bg:#f5f2f0;
     --deep-blue:#A8C7BB;
     --black-st:#0c162d;
     --black-st:#3b4250;
     --light-green:#36f1a6;
     --gray-layer:#3b42507a;
     --light-purple: #856fa8f1;
+    --yellow-light: #d8da84;
+    --light-deep:#87bda7;
 }
 .bg-navigation{
     height: 110px;
@@ -22,7 +24,45 @@ nav {
         display: none;
     }
 }
+.product-layout{
+    display: flex;
+    width: 100%;
+}
+.filter-container{
+    padding: 10px 0px;
+    flex-basis: 40%;
+    align-content: left;
+    margin: 0;
+    .filter-list {
+        list-style: none;
+        margin: 0;
+        /* float: left ; */
+        width: 75%;
+    }
+    
+    .filter-list .filter-bar{
+        border: solid 1px transparent;
+        border-radius: 4px;
+        padding: 10px;
+        font-size: 1.2em;
+        margin: 10px 0;
+        background: var(--light-bg);
+        color: var(--white-bg);
+        width: auto;
+    }
+    .filter-list .filter-bar:hover{
+        background-color: var(--light-deep);
+        color: var(--black-st);
+        box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
+    }
+    .filter-list .filter-selected{
+        border: solid var(--black-st) 4px;
+    }
 
+}
+.w-full{
+    width: 100%;
+}
 #laracon{
     width: 100px;
     height: 100px;
@@ -214,10 +254,9 @@ header{
     gap: 10px;
     /* grid-template-columns: repeat(5, 1fr); */
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-
     padding: 30px;
     border: solid black 1px;
-    margin: 5px 10%;
+    /* margin: 5px 10%; */
     border-radius: 10px;
     grid-auto-flow: dense;
     /* overflow-wrap:anywhere; */

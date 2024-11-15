@@ -284,6 +284,7 @@ header{
     border-radius: 10px;
     background-color: var(--strong-bg);
     color: var(--white-bg);
+    max-width: 275px;
 }
 .anchors{
     display: flex;
@@ -435,6 +436,7 @@ header{
     }
     .item{
         font-size: small;
+        max-width: 150px;
     }
     .filter-list{
         padding: 0;

@@ -1,5 +1,6 @@
 //@ts-check
 export default class FilterBar {
+    id = 0
     name = ""
     avilable = ""
     /**
@@ -8,6 +9,7 @@ export default class FilterBar {
      */
     constructor(params){
         this.name = params.name
+        this.id = params.id
     }
     display(){
         this.component = this.create_component()
@@ -18,7 +20,7 @@ export default class FilterBar {
         let name = document.createElement('span')
         let wrap = document.createElement('div')
         let check = document.createElement('input')
-        check.type = 'checkbox'
+        check.setAttribute('type', 'checkbox')
         name.innerText = this.name
         container.classList.add('filter-bar')
         wrap.classList.add('filter-wrap')

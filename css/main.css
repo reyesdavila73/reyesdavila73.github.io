@@ -60,6 +60,23 @@ nav {
     }
 
 }
+.browser-container{
+    padding-bottom: 5px;
+    align-items: center;
+    .browser-title{
+        font-weight: 700;
+        font-size: larger;
+        color: var(--white-bg);
+        padding: 0px 10px;
+    }
+    .browser-input{
+        padding: 5px 10px;
+        border-radius: 15px;
+        border: 0;
+        font-size: medium;
+    }
+}
+
 .w-full{
     width: 100%;
 }
@@ -224,7 +241,7 @@ header{
     /* background-color: gray; */
     background-color: var(--strong-bg);
     padding: 5px;
-
+    border-radius: 5px;
 }
 
 .spc-even{
@@ -314,6 +331,9 @@ header{
     border-radius: 10px 10px 0 0;
     padding: 2px 0;
 }
+.responsive-anchors-container{
+    display: none;
+}
 @media screen and (max-width: 800px){
     nav .anchors a:not(:first-child) {display: none;}
     nav .anchors a.icon {
@@ -322,10 +342,41 @@ header{
         font-size: 40px;
       }
 
+    .main{
+        margin-top: 30px;
+    }
+    .product-layout{
+        display: block;
+    }
+    
     nav.responsive .anchors a {
       float: none;
       display: block;
       text-align: left;
+    }
+    nav.show-anchors{
+        height: auto;
+    }
+    .responsive-anchors-container-responsive{
+        display: grid;
+        width: 100%;
+        top: 100px;
+        height: auto;
+        grid-column: 3;
+        background-color: var(--strong-bg);
+        .responsive-anchors{
+            width: 100%;
+            display: contents;
+        a{
+            text-align: end;
+            padding: 5px;
+            border-bottom: solid 1px white;
+            text-decoration: none;
+            color: var(--white-bg);
+        }
+        }
+    
+            
     }
     nav.responsive{
         /* display: flex; */
@@ -353,7 +404,6 @@ header{
         height: 50px;
     }
     .tr-columns{
-        display: flex;
         margin: auto;
         height: 90px;
     }
@@ -376,6 +426,7 @@ header{
          /* grid-template-columns: repeat(5, 1fr); */
         grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
         padding: 30px;
+        width: auto;
         
     }
     .product-img{
@@ -384,5 +435,13 @@ header{
     }
     .item{
         font-size: small;
+    }
+    .filter-list{
+        padding: 0;
+        margin: auto;
+        width: 100%;
+        .filter-bar{
+            width: 100%;
+        }
     }
 }

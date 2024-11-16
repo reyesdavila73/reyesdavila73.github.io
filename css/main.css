@@ -35,7 +35,7 @@ nav {
     margin: 0;
     .filter-list {
         list-style: none;
-        margin: 0;
+        /* margin: 0; */
         /* float: left ; */
         width: 75%;
     }
@@ -436,7 +436,7 @@ header{
     }
     .item{
         font-size: small;
-        max-width: 150px;
+        max-width: 170px;
     }
     .filter-list{
         padding: 0;

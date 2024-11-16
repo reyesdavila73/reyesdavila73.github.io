@@ -35,6 +35,10 @@ export default class Notify{
             document.getElementById(alert.id)?.remove()
         }, 3000)
     }
+    /**
+     * 
+     * @param {String} msg 
+     */
     static warn(msg){
         let alert = document.createElement('div')
         this.alert_id = `alert-info-${(Math.random() * 1000).toFixed()}`

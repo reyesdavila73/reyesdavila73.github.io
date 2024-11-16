@@ -64,7 +64,6 @@ const updateActiveFilters = (element) => {
         } else {
             ActiveFilters.push(element.id)
         }
-        console.log(ActiveFilters)
         updateProductPool()
 }
 const updateActiveQuery = () => {

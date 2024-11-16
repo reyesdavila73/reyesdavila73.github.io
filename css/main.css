@@ -14,6 +14,11 @@
     --yellow-light: #d8da84;
     --light-deep:#87bda7;
 }
+footer{
+    /* position: fixed; */
+    bottom: 0;
+    width: 100%;
+}
 .notify{
     position: fixed;
     right: 0;
@@ -414,7 +419,13 @@ header{
         display: block;
         font-size: 40px;
       }
-
+    nav.topnav{
+        width: 100%;
+    }
+    .notify{
+        width: 40%;
+        font-size: medium;
+    }
     .main{
         margin-top: 30px;
     }
@@ -435,7 +446,7 @@ header{
         width: 100%;
         top: 100px;
         height: auto;
-        grid-column: 3;
+        grid-column: 3 span;
         background-color: var(--strong-bg);
         .responsive-anchors{
             width: 100%;
@@ -477,6 +488,7 @@ header{
         height: 50px;
     }
     .tr-columns{
+        width: 100%;
         margin: auto;
         height: 90px;
     }

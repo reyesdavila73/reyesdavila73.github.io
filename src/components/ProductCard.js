@@ -75,9 +75,9 @@ export default class ProductCard {
             let container = document.createElement('div')
             let closeBtn = document.createElement('i')
             closeBtn.innerHTML = "x"
+            closeBtn.classList.add('close-modal-btn')
             closeBtn.addEventListener('click', () =>{
                 document.getElementById(this.dialog_id)?.close()
-                Notify.info('producto agregado al carrito')
             })
             let image = document.createElement('div')
             image.style.backgroundImage = `url(${this.image})`

@@ -2,7 +2,7 @@
 import ProductCard  from './components/ProductCard.js'
 import { ProductService } from './services/product-service.js';
 // let productos = [Product, periferico, periferico2]
-
+import Notify from './components/Notify.js';
 import CategorieCarr from './components/CategorieCar.js';
 import { CategoriesService } from './services/categories-services.js'
 import categories from '../resources/categories.js';
@@ -105,4 +105,3 @@ window.onload = () => {
     showCategories()
     showFilters()
 }
-

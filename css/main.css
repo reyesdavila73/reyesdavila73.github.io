@@ -40,6 +40,7 @@ footer{
 }
 .notify-warn{
     background-color: yellow;
+    color: var(--black-st);
 }
 .bg-navigation{
     height: 110px;
@@ -157,9 +158,11 @@ nav {
     }
 
 }
-.title {
+.title{
     font-size: 50px;
     font-weight: 700;
+    color: black;
+    text-decoration: none;
     /* text-align: center; */
 }
 header{
@@ -361,8 +364,9 @@ header{
         imageCont.style.margin = '10px auto' */
 }
 
-.modal::backdrop{
-    background: rgba(0, 0, 0, 0.116);
+.product-modal::backdrop{
+    background: rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(1px);
 }
 .product-modal{
     width: 500px;
@@ -448,7 +452,11 @@ header{
     .product-layout{
         display: block;
     }
-    
+    .product-modal{
+        width: 400px;
+        padding: 10px;
+        margin: auto;
+    }
     nav.responsive .anchors a {
       float: none;
       display: block;

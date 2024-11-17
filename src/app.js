@@ -1,13 +1,14 @@
 //@ts-check
 import ProductCard  from './components/ProductCard.js'
 import { ProductService } from './services/product-service.js';
-// let productos = [Product, periferico, periferico2]
 import Notify from './components/Notify.js';
 import CategorieCarr from './components/CategorieCar.js';
 import { CategoriesService } from './services/categories-services.js'
 import categories from '../resources/categories.js';
 import FilterBar from './components/FilterBars.js';
-
+/**
+ * 
+ */
 const ProductWrapper = document.getElementById('prodWrap')
 const Navigation = document.getElementById('navbar')
 const Carnival = document.getElementById('carnival')
@@ -23,7 +24,6 @@ const showCategories = () => {
         Carnival?.appendChild(currCat.display())
     }
 }
-
 const showAnchors = () => {
     try {
         let anchors = document.getElementById('responsive-anchors')
@@ -56,7 +56,7 @@ const showProductsWithFilter = filters => {
 }
 /**
  * 
- * @param {FilterBar} element 
+ * @param {Number} element 
  */
 const updateActiveFilters = (element) => {
         if (ActiveFilters.includes(element.id)){
@@ -67,13 +67,14 @@ const updateActiveFilters = (element) => {
         updateProductPool()
 }
 const updateActiveQuery = () => {
-    ActiveQuery = ProductQueryInput?.value.toLowerCase();
-    console.log(ActiveQuery)
+    ActiveQuery = ProductQueryInput?.value.toLowerCase()
     updateProductPool()
 }
 const updateProductPool = () => {
     try {
-        ProductWrapper.innerHTML = ""
+        if (ProductWrapper){
+            ProductWrapper.innerHTML = ""
+        }
     } catch (error) {
         console.log(error)
     }
@@ -87,7 +88,6 @@ const updateProductPool = () => {
 const showFilters = () =>{
     let filters = CategoriesService.getSample()
     for (let index = 0; index < filters.length; index++) {
-        console.log('new filter')
         let element = new FilterBar(filters[index]);
         let filterbar = element.display()
         filterbar.addEventListener('click', () => updateActiveFilters(element))
@@ -99,7 +99,6 @@ Navigation?.addEventListener('click', showAnchors)
 ProductQueryInput?.addEventListener('change', updateActiveQuery)
 
 window.onload = () => {
-    console.log("start on load app...")
     showProducts()
     showCategories()
     showFilters()

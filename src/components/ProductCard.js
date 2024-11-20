@@ -1,5 +1,6 @@
 //@ts-check
 import Notify from "./Notify.js"
+import ShopCart from "../database/ShopCart.js"
 export default class ProductCard {
     name = ""
     desc = ""
@@ -99,6 +100,8 @@ export default class ProductCard {
             addToShopCar.addEventListener('click', () => {
                 document.getElementById(this.dialog_id)?.close()
                 Notify.info('elemento agregado al carrito')
+                ShopCart.addToCart(this)
+                // ShopCart.set('element', 'one')
             })
             btnContainer.appendChild(addToShopCar)
             btnContainer.appendChild(buyBtn)

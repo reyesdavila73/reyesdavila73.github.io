@@ -1,100 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="./css/main.css">  
+    <link rel="stylesheet" href="./css/main.css">
     <title>PCShop</title>
 </head>
+
 <body>
-    <header>
-        <nav class="tr-columns bg-green topnav" id="navbar">
-            <div class="icon">
-                <img src="./assets/image.png" alt="not-found" id="laracon">
-            </div>
-            <div class="title title spacing-3">PCShop</div>
-            <div class="anchors font-xlarge">
-                <a href="javascript:void(0);" class="icon">
-                    <i class="fa fa-bars"></i>
+    <header class="bg-[#76A793] font-ibrand shadow-xl sticky top-0  z-50 w-full h-auto  ">
+        <nav class=" mx-5 flex items-center justify-between py-4">
+            <!-- Logo -->
+            <div class="flex items-center">
+                <img src="../../assets/image.webp" alt="not-found" class="h-10 w-10">
+
+                <a href="../../index.html">
+                    <span class="ml-8 text-3xl text-white">PCShop</span>
                 </a>
+            </div>
+
+            <!-- Navigation Links -->
+            <div class="lg:flex space-x-12 text-white text-2xl hidden ">
+                <a href="/src/pages/who.html" class="hover:underline">Quienes somos</a>
+                <a href="/src/pages/team.html" class="hover:underline">Equipo</a>
+                <a href="/src/pages/contact.html" class="hover:underline">Contactanos</a>
                 <a href="">
-                    <span>About Us</span>
-                </a>
-                <a href="./src/pages/team.html">
-                    <span>Equipo</span>
-                </a>
-                <a href="./src/pages/contact.html">
-                    <span>Contactanos</span>
-                </a>
-                <a href="./src/pages/user-page.html">
-                    <span>Me</span>
-                    <!-- <i class="fa fa-shopping-cart"></i> -->
-                    <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+                    <i class="fa fa-shopping-cart"></i>
                 </a>
             </div>
-            <div class="responsive-anchors-container" id="responsive-anchors">
-                <div></div>
-                <div></div>
-                <div class="responsive-anchors font-xlarge">
-                    <a href="">
-                        <span>About Us</span>
-                        <i class="fa fa-blind" aria-hidden="true"></i>
-                    </a>
-                    <a href="./src/pages/team.html">
-                        <span>Equipo</span>
-                        <i class="fa fa-users" aria-hidden="true"></i>
-                    </a>
-                    <a href="./src/pages/contact.html">
-                        <span>Contactanos</span>
-                        <i class="fa fa-phone"></i>
-                    </a>
-                    <a href="./src/pages/user-page.html">
-                        <span>Me</span>
-                        <i class="fa fa-shopping-cart"></i>
-                        <i class="fa-solid fa-circle-user"></i>
-                    </a>
+
+            <div class="lg:hidden text-white text-2xl" role="dialog" aria-modal="true">
+                <!-- Botón para abrir modal -->
+                <i class="fa fa-solid fa-bars cursor-pointer" id="open-modal"></i>
+
+                <!-- Fondo del modal -->
+                <div id="modal-overlay"
+                    class="hidden fixed inset-0 z-10 bg-black bg-opacity-50 transition-opacity duration-300 ease-in-out">
+                </div>
+
+                <!-- Contenido del modal -->
+                <div id="modal-content"
+                    class="hidden fixed inset-y-0 right-0 z-20 w-full sm:max-w-sm bg-[#76A793] p-6 shadow-lg transform translate-x-full transition-transform duration-700 ease-in-out">
+                    <div class="flex items-center justify-between">
+                        <h2 class="text-xl font-normal">Navegación</h2>
+                        <button id="close-modal" class="text-gray-600 hover:text-gray-900">
+                            <i class="fa fa-times"></i>
+                        </button>
+                    </div>
+                    <!-- Contenido del modal -->
+                    <div class="grid py-10 gap-y-5">
+                        <a href="/src/pages/who.html" class="hover:underline">Quienes somos</a>
+                        <a href="/src/pages/team.html" class="hover:underline">Equipo</a>
+                        <a href="/src/pages/contact.html" class="hover:underline">Contactanos</a>
+                        <a href="/src/pages/shop.html">
+                            <i class="fa fa-shopping-cart"></i>
+                            Carrito
+                        </a>
+                    </div>
+
                 </div>
             </div>
+
+
         </nav>
-        
     </header>
-    <br>
+
     <div class="main home">
-        <div class="carnival flex-b-70 " >
+        <div class="carnival flex-b-70 ">
             <div class="categorie-container">
                 <ul class="cat-list" id="carnival">
                 </ul>
             </div>
         </div>
-        <div class="widget rounded">
-            <h1>Lets explore some new products!</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis itaque delectus, obcaecati atque perspiciatis tempora illum expedita ipsam eum vitae modi tempore. Autem numquam nisi dolores, maxime laborum minima tempora?
-            Velit animi magnam ipsum praesentium dolor adipisci dignissimos quasi reprehenderit officia nisi odio quidem labore ab recusandae in quo impedit, quod nesciunt eius sequi debitis voluptatum autem minima? Reiciendis, dignissimos!
-            Quos, mollitia ut! Ullam odit dolores natus quam a est non, aperiam dolorem quisquam delectus culpa dignissimos perspiciatis libero dolore. Incidunt et ratione voluptates ullam sunt reprehenderit neque accusantium fugit.</p>
+        <div class="widget rounded font-bold px-10">
+            <h1 class="text-2xl mb-5"> Explora nuestros nuevos productos</h1>
+            <p class="text-xl font-semibold text-justify">En PCShop nos complace ofrecerte lo último en tecnología para
+                que puedas mantener tu equipo en las
+                mejores condiciones. Descubre una variedad de servicios y productos que te ayudarán a obtener lo mejor
+                de tu tecnología. Desde reparaciones especializadas hasta equipos de alta calidad, tenemos todo lo que
+                necesitas para avanzar sin preocupaciones.</p>
         </div>
     </div>
-    <div class="selection-table center">
-        <h1 class="subtitle">Hello this is a Subtitle, u can always trust in BigMamma</h1>
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsum ullam sunt quae eos, porro veniam nihil exercitationem officia cumque quos sint quis nulla minus tenetur itaque laboriosam impedit eligendi. Quia.
-        Sunt repudiandae odio laudantium vitae ea molestias ex, ducimus laboriosam facere fuga adipisci tempore. Laborum sed hic vero alias dicta aliquid debitis, odio vel deleniti, possimus suscipit id fuga similique.</p>
+    <div class="mx-2 selection-table center">
+        <!-- <h1 class="subtitle">Hello this is a Subtitle, u can always trust in BigMamma</h1>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsum ullam sunt quae eos, porro veniam nihil
+            exercitationem officia cumque quos sint quis nulla minus tenetur itaque laboriosam impedit eligendi. Quia.
+            Sunt repudiandae odio laudantium vitae ea molestias ex, ducimus laboriosam facere fuga adipisci tempore.
+            Laborum sed hic vero alias dicta aliquid debitis, odio vel deleniti, possimus suscipit id fuga similique.
+        </p> -->
         <div class="offer-head flex spc-even items-center">
             <!-- <h2>Offers of the day</h2> -->
             <!-- <h2>Hot sale</h2> -->
             <h2 class="prod-head">Productos destacados</h2>
             <div class="flex browser-container">
-                <span class="browser-title" >Buscar</span>
+                <span class="browser-title">Buscar</span>
                 <input type="text" class="browser-input" id="product-query">
             </div>
 
         </div>
         <div class="product-layout">
-            <div class="filter-container w-full" id="filter-container">
+            <div class="filter-container w-full font-bold " id="filter-container">
                 <ul class="filter-list" id="filter-list"></ul>
             </div>
+            
+
             <div class="cards-container margin-top-5 w-full" id="prodWrap"></div>
         </div>
-        
+
     </div>
 
     <!-- scripts  -->
@@ -102,4 +117,5 @@
     <!-- <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script> -->
 
 </body>
+
 </html>

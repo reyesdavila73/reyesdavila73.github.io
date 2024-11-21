@@ -5,37 +5,67 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contacto</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../../css/main.css">
 </head>
 
 <body>
-    <header>
-        <nav class="tr-columns bg-[#83AF9E] font-ibrand">
-            <div class="icon">
-                <img src="./../../assets/image.png" alt="not-found" id="laracon">
-            </div>
-            <div class="title spacing-3">
-                <a href="./../../index.html">PCShop</a>
-            </div>
-            <div class="title spacing-3">
+    <header class="bg-[#76A793] font-ibrand shadow-xl sticky top-0 mb-5 z-50 w-full h-auto  ">
+        <nav class=" mx-5 flex items-center justify-between py-4">
+            <!-- Logo -->
+            <div class="flex items-center">
+                <img src="../../assets/image.webp" alt="not-found" class="h-10 w-10">
+
                 <a href="../../index.html">
-                    <span>PCShop</span>
+                    <span class="ml-8 text-3xl text-white">PCShop</span>
                 </a>
             </div>
-            <div class="anchors font-xlarge">
+
+            <!-- Navigation Links -->
+            <div class="lg:flex space-x-12 text-white text-2xl hidden ">
+                <a href="/src/pages/who.html" class="hover:underline">Quienes somos</a>
+                <a href="/src/pages/team.html" class="hover:underline">Equipo</a>
+                <a href="/src/pages/contact.html" class="hover:underline">Contactanos</a>
                 <a href="">
-                    <span>Quienes somos</span>
-                </a>
-                <a href="/src/pages/team.html">
-                    <span>Equipo</span>
-                </a>
-                <a href="/src/pages/contact.html">
-                    <span>Contactanos</span>
+                    <i class="fa fa-shopping-cart"></i>
                 </a>
             </div>
+
+            <div class="lg:hidden text-white text-2xl" role="dialog" aria-modal="true">
+                <!-- Botón para abrir modal -->
+                <i class="fa fa-solid fa-bars cursor-pointer" id="open-modal"></i>
+
+                <!-- Fondo del modal -->
+                <div id="modal-overlay"
+                    class="hidden fixed inset-0 z-10 bg-black bg-opacity-50 transition-opacity duration-300 ease-in-out">
+                </div>
+
+                <!-- Contenido del modal -->
+                <div id="modal-content"
+                    class="hidden fixed inset-y-0 right-0 z-20 w-full sm:max-w-sm bg-[#76A793] p-6 shadow-lg transform translate-x-full transition-transform duration-700 ease-in-out">
+                    <div class="flex items-center justify-between">
+                        <h2 class="text-xl font-normal">Navegación</h2>
+                        <button id="close-modal" class="text-gray-600 hover:text-gray-900">
+                            <i class="fa fa-times"></i>
+                        </button>
+                    </div>
+                    <!-- Contenido del modal -->
+                    <div class="grid py-10 gap-y-5">
+                        <a href="/src/pages/who.html" class="hover:underline">Quienes somos</a>
+                        <a href="/src/pages/team.html" class="hover:underline">Equipo</a>
+                        <a href="/src/pages/contact.html" class="hover:underline">Contactanos</a>
+                        <a href="/src/pages/shop.html">
+                            <i class="fa fa-shopping-cart"></i>
+                            Carrito
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+
+
         </nav>
     </header>
-    <div class="bg-navigation"></div>
     <div class="mt-6 max-w-6xl max-lg:max-w-3xl mx-auto bg-[#A8C7BB] rounded-lg">
         <div class="grid lg:grid-cols-2 items-center gap-14 sm:p-8 p-4 font-[sans-serif]">
             <div>
@@ -155,7 +185,7 @@
         </div>
     </div>
 
-    <footer class="mt-10 flex flex-col items-center bg-[#76A793] text-center text-surface  ">
+    <footer class="mt-10  bottom-0  absolute flex flex-col items-center bg-[#76A793] text-center text-surface  ">
         <div class="container pt-9">
             <div class="mb-6 flex justify-center space-x-2">
                 <a href="#!" type="button"

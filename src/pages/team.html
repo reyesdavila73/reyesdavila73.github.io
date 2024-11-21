@@ -6,40 +6,76 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página de Equipo</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../../css/main.css">
 </head>
 
-<body class="flex flex-col">
-    <header class="">
-        <nav class="tr-columns bg-[#76A793] shadow-2xl font-ibrand mb-10">
-            <div class="icon">
-                <img src="../../assets/image.png" alt="not-found" id="laracon">
-            </div>
-            <div class="title spacing-3">
+<body>
+    <header class="bg-[#76A793] font-ibrand shadow-xl sticky top-0 mb-5 z-50 w-full h-auto  ">
+        <nav class=" mx-5 flex items-center justify-between py-4">
+            <!-- Logo -->
+            <div class="flex items-center">
+                <img src="../../assets/image.webp" alt="not-found" class="h-10 w-10">
+
                 <a href="../../index.html">
-                    <span>PCShop</span>
+                    <span class="ml-8 text-3xl text-white">PCShop</span>
                 </a>
             </div>
-            <div class="anchors font-xlarge">
-                <a href="/src/pages/team.html">
-                    <span>Quienes somos</span>
-                </a>
+
+            <!-- Navigation Links -->
+            <div class="lg:flex space-x-12 text-white text-2xl hidden ">
+                <a href="/src/pages/who.html" class="hover:underline">Quienes somos</a>
+                <a href="/src/pages/team.html" class="hover:underline">Equipo</a>
+                <a href="/src/pages/contact.html" class="hover:underline">Contactanos</a>
                 <a href="">
-                    <span>Equipo</span>
-                </a>
-                <a href="/src/pages/contact.html">
-                    <span>Contactanos</span>
+                    <i class="fa fa-shopping-cart"></i>
                 </a>
             </div>
+
+            <div class="lg:hidden text-white text-2xl" role="dialog" aria-modal="true">
+                <!-- Botón para abrir modal -->
+                <i class="fa fa-solid fa-bars cursor-pointer" id="open-modal"></i>
+
+                <!-- Fondo del modal -->
+                <div id="modal-overlay"
+                    class="hidden fixed inset-0 z-10 bg-black bg-opacity-50 transition-opacity duration-300 ease-in-out">
+                </div>
+
+                <!-- Contenido del modal -->
+                <div id="modal-content"
+                    class="hidden fixed inset-y-0 right-0 z-20 w-full sm:max-w-sm bg-[#76A793] p-6 shadow-lg transform translate-x-full transition-transform duration-700 ease-in-out">
+                    <div class="flex items-center justify-between">
+                        <h2 class="text-xl font-normal">Navegación</h2>
+                        <button id="close-modal" class="text-gray-600 hover:text-gray-900">
+                            <i class="fa fa-times"></i>
+                        </button>
+                    </div>
+                    <!-- Contenido del modal -->
+                    <div class="grid py-10 gap-y-5">
+                        <a href="/src/pages/who.html" class="hover:underline">Quienes somos</a>
+                        <a href="/src/pages/team.html" class="hover:underline">Equipo</a>
+                        <a href="/src/pages/contact.html" class="hover:underline">Contactanos</a>
+                        <a href="/src/pages/shop.html">
+                            <i class="fa fa-shopping-cart"></i>
+                            Carrito
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+
+
         </nav>
     </header>
-    <div class="grid grid-cols-4 gap-8 flex-1">
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
         <div class="text-center flex flex-col items-center">
             <div class="relative overflow-hidden rounded-lg w-72 h-80 group">
-                <img src="../../assets/marx.webp" alt="Imagen 1"
+                <img src="../../assets/marxmugshot.webp" alt="Imagen 1"
                     class="w-full h-full object-cover transition-all group-hover:filter-none group-hover:grayscale-0 filter grayscale">
             </div>
-            <p class="mt-2 text-3xl font-semibold text-gray-800">CEO</p>
+            <p class="mt-2 text-3xl font-semibold text-gray-800">Karl Marx</p>
+            <p class="text-2xl font-light text-gray-800">CEO</p>
+
 
             <div class="flex space-x-2">
                 <a href="#!" type="button"
@@ -78,10 +114,11 @@
 
         <div class="text-center flex flex-col items-center">
             <div class="relative overflow-hidden rounded-lg w-72 h-80 group">
-                <img src="../../assets/konan.webp" alt="Imagen 2"
+                <img src="../../assets/amlo.webp" alt="Imagen 2"
                     class="w-full h-full object-cover transition-all group-hover:filter-none group-hover:grayscale-0 filter grayscale">
             </div>
-            <p class="mt-2 text-3xl font-semibold text-gray-800">Técnico general</p>
+            <p class="mt-2 text-3xl font-semibold text-gray-800">Andres Manuel</p>
+            <p class="text-2xl font-light text-gray-800">Gerente Regional</p>
             <div class="flex space-x-2">
                 <a href="#!" type="button"
                     class="rounded-lg p-2 bg-black font-medium uppercase leading-normal text-surface transition duration-150 ease-in-out hover:bg-red-500 focus:outline-none focus:ring-0 mt-2"
@@ -118,10 +155,11 @@
 
         <div class="text-center flex flex-col items-center">
             <div class="relative overflow-hidden rounded-lg w-72 h-80 group">
-                <img src="../../assets/steve.webp" alt="Imagen 3"
+                <img src="../../assets/steve2.webp" alt="Imagen 3"
                     class="w-full h-full object-cover transition-all group-hover:filter-none group-hover:grayscale-0 filter grayscale">
             </div>
-            <p class="mt-2 text-3xl font-semibold text-gray-800">Soporte técnico</p>
+            <p class="mt-2 text-3xl font-semibold text-gray-800">Steve Jobs</p>
+            <p class="text-2xl font-light text-gray-800">Soporte tecnico</p>
             <div class="flex space-x-2">
                 <a href="#!" type="button"
                     class="rounded-lg p-2 bg-black font-medium uppercase leading-normal text-surface transition duration-150 ease-in-out hover:bg-red-500 focus:outline-none focus:ring-0 mt-2"
@@ -158,10 +196,11 @@
 
         <div class="text-center flex flex-col items-center">
             <div class="relative overflow-hidden rounded-lg w-72 h-80 group">
-                <img src="../../assets/kanye.webp" alt="Imagen 4"
+                <img src="../../assets/kanye2.webp" alt="Imagen 4"
                     class="w-full h-full object-cover transition-all group-hover:filter-none group-hover:grayscale-0 filter grayscale">
             </div>
-            <p class="mt-2 text-3xl font-semibold text-gray-800">Administrador de tienda</p>
+            <p class="mt-2 text-3xl font-semibold text-gray-800">Kanye West</p>
+            <p class="text-2xl font-light text-gray-800">Administrador general</p>
             <div class="flex space-x-2">
                 <a href="#!" type="button"
                     class="rounded-lg p-2 bg-black font-medium uppercase leading-normal text-surface transition duration-150 ease-in-out hover:bg-red-500 focus:outline-none focus:ring-0 mt-2"
@@ -198,10 +237,11 @@
 
         <div class="text-center flex flex-col items-center">
             <div class="relative overflow-hidden rounded-lg w-72 h-80 group">
-                <img src="../../assets/jeremy.webp" alt="Imagen 1"
+                <img src="../../assets/donald.webp" alt="Imagen 1"
                     class="w-full h-full object-cover transition-all group-hover:filter-none group-hover:grayscale-0 filter grayscale">
             </div>
-            <p class="mt-2 text-3xl font-semibold text-gray-800">Comprador</p>
+            <p class="mt-2 text-3xl font-semibold text-gray-800">Donaldo Trump</p>
+            <p class="text-2xl font-light text-gray-800">Comprador</p>
             <div class="flex space-x-2">
                 <a href="#!" type="button"
                     class="rounded-lg p-2 bg-black font-medium uppercase leading-normal text-surface transition duration-150 ease-in-out hover:bg-red-500 focus:outline-none focus:ring-0 mt-2"
@@ -238,10 +278,11 @@
 
         <div class="text-center flex flex-col items-center">
             <div class="relative overflow-hidden rounded-lg w-72 h-80 group">
-                <img src="../../assets/temach.webp" alt="Imagen 2"
+                <img src="../../assets/tyson.webp" alt="Imagen 2"
                     class="w-full h-full object-cover transition-all group-hover:filter-none group-hover:grayscale-0 filter grayscale">
             </div>
-            <p class="mt-2 text-3xl font-semibold text-gray-800">Relaciones externas</p>
+            <p class="mt-2 text-3xl font-semibold text-gray-800">Iron Mike</p>
+            <p class="text-2xl font-light text-gray-800">Relaciones externas</p>
             <div class="flex space-x-2">
                 <a href="#!" type="button"
                     class="rounded-lg p-2 bg-black font-medium uppercase leading-normal text-surface transition duration-150 ease-in-out hover:bg-red-500 focus:outline-none focus:ring-0 mt-2"
@@ -278,10 +319,11 @@
 
         <div class="text-center flex flex-col items-center">
             <div class="relative overflow-hidden rounded-lg w-72 h-80 group">
-                <img src="../../assets/dani.webp" alt="Imagen 3"
+                <img src="../../assets/walter.webp" alt="Imagen 3"
                     class="w-full h-full object-cover transition-all group-hover:filter-none group-hover:grayscale-0 filter grayscale">
             </div>
-            <p class="mt-2 text-3xl font-semibold text-gray-800">Encargado de piso</p>
+            <p class="mt-2 text-3xl font-semibold text-gray-800">Walter Blanco</p>
+            <p class="text-2xl font-light text-gray-800">Encargado de piso</p>
             <div class="flex space-x-2">
                 <a href="#!" type="button"
                     class="rounded-lg p-2 bg-black font-medium uppercase leading-normal text-surface transition duration-150 ease-in-out hover:bg-red-500 focus:outline-none focus:ring-0 mt-2"
@@ -318,11 +360,11 @@
 
         <div class="text-center flex flex-col items-center">
             <div class="relative overflow-hidden rounded-lg w-72 h-80 group">
-                <img src="../../assets/ice.webp" alt="Imagen 4"
+                <img src="../../assets/rei.webp" alt="Imagen 4"
                     class="w-full h-full object-cover transition-all group-hover:filter-none group-hover:grayscale-0 filter grayscale">
             </div>
-            <p class="mt-2 text-3xl font-semibold text-gray-800">Recursos Humanos</p>
-            <div class="flex space-x-2">
+            <p class="mt-2 text-3xl font-semibold text-gray-800">Reinalda Ayanami</p>
+            <p class="text-2xl font-light text-gray-800">Recursos Humanos</p>            <div class="flex space-x-2">
                 <a href="#!" type="button"
                     class="rounded-lg p-2 bg-black font-medium uppercase leading-normal text-surface transition duration-150 ease-in-out hover:bg-red-500 focus:outline-none focus:ring-0 mt-2"
                     data-twe-ripple-init>
@@ -357,7 +399,7 @@
         </div>
     </div>
 
-    <footer class="mt-10 flex flex-col items-center bg-[#76A793] text-center text-surface">
+    <footer class="mt-10  bottom-0 relative flex flex-col items-center bg-[#76A793] text-center text-surface">
         <div class="container pt-9">
             <div class="mb-6 flex justify-center space-x-2">
                 <a href="#!" type="button"
@@ -439,6 +481,8 @@
             <a href="https://tw-elements.com/">TW Elements</a>
         </div>
     </footer>
+    <script src="../app.js" type="module"></script>
+
 </body>
 
 </html>

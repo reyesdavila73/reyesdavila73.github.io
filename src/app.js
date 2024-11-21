@@ -103,3 +103,36 @@ window.onload = () => {
     showCategories()
     showFilters()
 }
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    const openModalButton = document.getElementById("open-modal");
+    const closeModalButton = document.getElementById("close-modal");
+    const modalOverlay = document.getElementById("modal-overlay");
+    const modalContent = document.getElementById("modal-content");
+
+    const openModal = () => {
+        // Mostrar fondo y modal con transiciones
+        modalOverlay.classList.remove("hidden");
+        modalOverlay.classList.remove("opacity-0");
+        modalContent.classList.remove("hidden");
+        modalContent.classList.remove("translate-x-full");
+    };
+
+    const closeModal = () => {
+        // Ocultar fondo y modal con transiciones
+        modalOverlay.classList.add("opacity-0");
+        modalContent.classList.add("translate-x-full");
+
+        // Esperar a que termine la transición para ocultarlos completamente
+        setTimeout(() => {
+            modalOverlay.classList.add("hidden");
+            modalContent.classList.add("hidden");
+        }, 300); // Duración en ms que coincide con `duration-300` de Tailwind
+    };
+
+    openModalButton.addEventListener("click", openModal);
+    closeModalButton.addEventListener("click", closeModal);
+    modalOverlay.addEventListener("click", closeModal);
+});
+

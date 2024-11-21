@@ -7,6 +7,7 @@ export default [
         "img":"assets/products/computer.jpg",  
         "categorie": 3,
         "has_disc":true,
+        "price":30,
         "discount":15,
     },
     {
@@ -14,7 +15,8 @@ export default [
         "name":"HeadSet",
         "desc":"un audifono super guay",
         "categorie":1,
-        "img":"assets/products/headphones.jpg",        
+        "img":"assets/products/headphones.jpg",
+        "price":30,
         "has_disc":false,
         "discount":15
     },
@@ -23,8 +25,9 @@ export default [
         "name":"Teclado",
         "desc":"una teclado super guay",
         "categorie":1,
-        "img":"assets/products/keyboard.jpg",        
+        "img":"assets/products/keyboard.jpg",     
         "has_disc":false,
+        "price":15,
         "discount":15
     },
     {
@@ -32,7 +35,8 @@ export default [
         "name":"Computadora",
         "desc":"una compu super guay",
         "categorie":3,
-        "img":"assets/products/computer.jpg",        
+        "img":"assets/products/computer.jpg",
+        "price":25,
         "has_disc":true,
         "discount":5
     },
@@ -43,6 +47,7 @@ export default [
         "categorie":1,
         "img":"assets/products/mouse.jpg",        
         "has_disc":true,
+        "price":15,
         "discount":5
     },
     {
@@ -52,6 +57,7 @@ export default [
         "categorie":1,
         "img":"assets/products/mouse.jpg",        
         "has_disc":false,
+        "price":15,
         "discount":5
     }
 ]

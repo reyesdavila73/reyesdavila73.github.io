@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./../../css/main.css">
+    <title>PCShop buy now!</title>
+</head>
+<body>
+    <header>
+        <nav class="tr-columns bg-green topnav" id="navbar">
+            <div class="icon">
+                <img src="./../../assets/image.png" alt="not-found" id="laracon">
+            </div>
+            <div class="title title spacing-3">PCShop</div>
+            <div class="anchors font-xlarge">
+                <a href="javascript:void(0);" class="icon">
+                    <i class="fa fa-bars"></i>
+                </a>
+                <a href="">
+                    <span>About Us</span>
+                </a>
+                <a href=".team.html">
+                    <span>Equipo</span>
+                </a>
+                <a href=".contact.html">
+                    <span>Contactanos</span>
+                </a>
+                <a href=".shoppingCart.html">
+                    <span>Me</span>
+                    <!-- <i class="fa fa-shopping-cart"></i> -->
+                    <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+                </a>
+            </div>
+            <div class="responsive-anchors-container" id="responsive-anchors">
+                <div></div>
+                <div></div>
+                <div class="responsive-anchors font-xlarge">
+                    <a href="">
+                        <span>About Us</span>
+                        <i class="fa fa-blind" aria-hidden="true"></i>
+                    </a>
+                    <a href="./src/pages/team.html">
+                        <span>Equipo</span>
+                        <i class="fa fa-users" aria-hidden="true"></i>
+                    </a>
+                    <a href="./src/pages/contact.html">
+                        <span>Contactanos</span>
+                        <i class="fa fa-phone"></i>
+                    </a>
+                    <a href="./src/pages/shoppingCart.html">
+                        <span>Me</span>
+                        <i class="fa fa-shopping-cart"></i>
+                        <i class="fa-solid fa-circle-user"></i>
+                    </a>
+                </div>
+            </div>
+        </nav>
+        
+    </header>
+    <div style="height: 100px;"></div>
+    <br>
+    <div class="user-layout">
+        <div class="user-from">
+                <div class="name-cont from-field">
+                    <label for="name">Name:</label>
+                    <input type="text"/>
+                </div>
+                <div class="email-cont from-field">
+                    <label for="email">Mail:</label>
+                    <input type="text">
+                </div>
+                <div class="addres-cont from-field">
+                    <label for="address">Address:</label>
+                    <input type="text">
+                </div>
+                <div class="payment-cont from-field">
+                    <label for="payment">Payment:</label>
+                    <select name="payment" id="payment">
+                        <option value="card">card</option>
+                        <option value="cash">cash</option>
+                        <option value="bonus">bonus</option>
+                        <option value="paypal">paypal</option>
+                    </select>
+                </div>
+        </div>
+    </div>
+    <div class="product-buynow-layout">
+        <div class="image-container">
+            <div class="image product-img" id="buynow-image"></div>
+        </div>
+        <div class="product-info-container">
+            <div class="title" id="buynow-title"></div>
+            <div class="price-container">
+                <div class="original-price" id="buynow-price"></div>
+                <div class="discount-price" id="discount-price"></div>
+            </div>
+            <div class="desc" id="buynow-desc"></div>
+            <div class="cuant-msg">
+                <span>Cantidad:</span>
+            </div>
+            <div class="buy-now-cuant">
+                <div class="buynow-less buynow-controller" onclick="LessProd()">
+                    <i class="fa fa-minus" alt="-"></i>
+                </div>
+                <div class="buynow-cuant" id="buynow-cuant"></div>
+                <div class="buynow-prod buynow-controller" onclick="PlusProd()">
+                    <i class="fa fa-plus" alt="+"></i>
+                </div>
+            </div>
+            <div class="total-wrapp">
+                <span>Total price:</span>
+                <div class="total" id="buynow-total"></div>
+            </div>
+        </div>
+    </div>
+    <div class="buynow-controllers-container">
+        <div class="controllers">
+            <div class="cancel" id="cancel">Cancel</div>
+            <div class="send-to-cart" id="send-to-cart">Send to cart</div>
+            <div class="confirm" id="confirm">Confirm</div>
+        </div>
+    </div>
+    <script>
+        if (localStorage.getItem("username") === null) {
+            //...
+        } else {
+            console.log(localStorage.getItem('username'))
+        }
+        let product = JSON.parse( localStorage.getItem('scopedProduct') )
+        let cuantity = 1
+        let price = product.price
+
+        const buyNowImage = document.getElementById('buynow-image')
+        const buyNowTitle = document.getElementById('buynow-title')
+        const buyNowDesc = document.getElementById('buynow-desc')
+        const buyNowPrice = document.getElementById('buynow-price')
+        const buyNowCuant = document.getElementById('buynow-cuant')
+        const buyNowTotal = document.getElementById('buynow-total')
+        const buyNowDiscount = document.getElementById('discount-price')
+        console.log(product)
+
+        buyNowTitle.innerText = product.name;
+        buyNowDesc.innerText = product.desc;
+        buyNowImage.style.backgroundImage = `url(/../../${product.image})`
+        buyNowCuant.innerText = cuantity.toString()
+        buyNowPrice.innerHTML = "$"+ product.price.toString()
+        if (product.product_object.has_disc){
+            price = price - (price * (product.product_object.discount / 100))
+            buyNowDiscount.innerText = "$"+price.toString()
+            buyNowPrice.classList.add('price-discounted')
+        }
+        
+        const UpdateTotal = () => {
+            buyNowTotal.textContent = "$" + (Number(price) * Number(cuantity))
+            buyNowCuant.innerText = cuantity.toString()
+        }
+        const PlusProd = () => {
+            cuantity = cuantity + 1
+            UpdateTotal()
+        }
+        const LessProd = () => {
+            if (cuantity > 1){
+                cuantity = cuantity - 1
+                UpdateTotal()
+            }
+        }
+        UpdateTotal()
+    </script>
+</body>
+</html>

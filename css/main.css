@@ -52,6 +52,133 @@ nav {
         display: none;
     }
 }
+.user-layout{
+    background-color: var(--strong-bg);
+    padding: 20px;
+    border-radius: 10px;
+    margin: 10px 0;
+    .user-form{
+        padding: 10px;
+        
+    }
+}
+.from-field{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    margin: 5px;
+    label{
+        color: var(--white-bg);
+        margin-right: 10px;
+        align-content: center;
+    }
+    input, select{
+        padding: 10px;
+        background-color: transparent;
+        color: var(--white-bg);
+        font-weight: 400;
+        border: solid white 1px;
+        font-size: medium;
+        border-radius: 10px;
+        
+    }
+    option{
+        background-color: var(--strong-bg);
+        border: 0;
+        padding:  0 5px;
+    }
+    option:hover{
+        background-color: var(--light-bg);
+    }
+    input:focus, select:focus{
+        border: solid white 1px;
+    }
+}
+.buynow-controllers-container{
+    width: 100%;
+    padding: 10px;
+    .controllers{
+        display: flex;
+        justify-content: space-evenly;
+        transition: all 1s ease;
+        animation: alternate;
+        div{
+            padding: 10px 30px;
+            border-radius: 5px;
+            color: var(--white-bg);
+        }
+        div:hover{
+            transition: all 1s ease;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.6);
+            border: solid var(--light-purple) 1px;
+            padding-inline: 55px;
+        }
+        .cancel{
+            background-color: red;
+        }
+        .send-to-cart{
+            background-color: var(--yellow-strong);
+            color: var(--black-st);
+        }
+        .confirm{
+            background-color: green;
+        }
+    }
+}
+.product-buynow-layout{
+    display: flex;
+    background-color: var(--black-st);
+    padding: 10px 20px;
+    width: 75%;
+    border-radius: 10px;
+    color: var(--white-bg);
+    .image-container{
+        flex-basis: 25%;
+        margin-right: 30px;
+        div{
+            width: 100%;
+        }
+    }
+    .product-info-container{
+        .title{
+            color: var(--white-bg);
+        }
+        .price-container{
+            display: flex;
+            div{
+                margin-right: 10px;
+            }
+            .price-discounted{
+                text-decoration: line-through;
+                padding: 0 5px;
+                color: var(--deep-blue);
+            }
+        }
+        .buy-now-cuant{
+            display: flex;
+            margin: 10px 0;
+            font-size: larger;
+            div{
+                margin-left: 5px;
+            }
+            .buynow-controller{
+                border: solid 2px var(--deep-blue);
+                border-radius: 5px;
+                padding: 3px 10px;
+            }
+            .buynow-cuant{
+                margin: 0 10px;
+                align-content: center;
+            }
+        }
+        .total-wrapp{
+            display: flex;
+            span{
+                margin-right: 10px;
+            }
+        }
+    }
+}
+
 .product-layout{
     display: flex;
     width: 100%;
@@ -505,7 +632,14 @@ header{
             }
         }
     }
-    
+    .product-info-container{
+        .title{
+            font-size: xx-large;
+        }
+    }
+    .product-buynow-layout{
+        width: 100%;
+    }
     #laracon{
         display: block;
         width: 50px;

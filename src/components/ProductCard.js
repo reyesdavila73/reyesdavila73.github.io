@@ -8,6 +8,7 @@ export default class ProductCard {
     dialog_id = ""
     discount = 0
     product_object = {}
+    price = 0
     /**
      * 
      * @param {Object} request 
@@ -17,6 +18,7 @@ export default class ProductCard {
         this.product_object = request
         this.name = request.name
         this.desc = request.desc
+        this.price = request.price
         this.image = request.img
         if (request.has_disc){
             this.discount = request.discount
@@ -94,6 +96,10 @@ export default class ProductCard {
             let buyBtn = document.createElement('div')
             buyBtn.classList.add('modal-buy-btn')
             buyBtn.innerText = "Buy"
+            buyBtn.addEventListener('click', () => {
+                ShopCart.setToBuy(this);
+                window.location.href = '/src/pages/buy-now.html'
+            })
             let addToShopCar = document.createElement('div')
             addToShopCar.classList.add('modal-shop-car-btn')
             addToShopCar.innerText = "Add to Shopping Car"

@@ -272,13 +272,32 @@ nav {
     border-radius: 10px;
 }
 
-header{
+/* header{ */
     /* border-bottom: 1px solid black; */
     /* box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.253); */
     /* row-gap: 10px; */
     /* position: fixed; */
+/* } */
+.sale-dialog{
+    width: 40%;
+    height: 30%;
+    border-radius: 10px;
+    text-align: center;
+    transition: all 1s;
+    align-content: center;
+    .sale-message{
+        font-size: xx-large;
+        font-weight: 700;
+        color: green;
+    }
+    .sale-subtitle{
+        font-size: large;
+    }
 }
-
+.sale-dialog::backdrop{
+    background: rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(0.3px);
+}
 .tr-columns {
     display: grid;
 
@@ -535,6 +554,7 @@ header{
     backdrop-filter: blur(1px);
 }
 .product-modal{
+    padding: 20px;
     width: 500px;
     aspect-ratio: 5 / 2;
     background-color: var(--black-st);

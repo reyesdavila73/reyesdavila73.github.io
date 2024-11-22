@@ -9,9 +9,7 @@
     <title>PCShop buy now!</title>
 </head>
 <body>
-
-    
-    <header class="bg-[#76A793] font-ibrand shadow-xl sticky top-0  z-50 w-full h-auto  ">
+    <header class="bg-[#76A793] font-ibrand shadow-xl sticky top-0 mb-5 z-50 w-full h-auto  ">
         <nav class=" mx-5 flex items-center justify-between py-4">
             <!-- Logo -->
             <div class="flex items-center">
@@ -27,10 +25,8 @@
                 <a href="/src/pages/who.html" class="hover:underline">Quienes somos</a>
                 <a href="/src/pages/team.html" class="hover:underline">Equipo</a>
                 <a href="/src/pages/contact.html" class="hover:underline">Contactanos</a>
-                <a href="./src/pages/shoppingCart.html">
-                    <span>Me</span>
-                    <!-- <i class="fa fa-shopping-cart"></i> -->
-                    <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+                <a href="">
+                    <i class="fa fa-shopping-cart"></i>
                 </a>
             </div>
 
@@ -71,21 +67,21 @@
     </header>
     <div class="buynow-standart-layout">
         <div class="user-layout buynow-from-layout">
-            <div class="user-from">
+            <form class="user-from" id="user-info">
                     <div class="name-cont from-field">
-                        <label for="name">Name:</label>
+                        <label for="name" required>Name:</label>
                         <input type="text"/>
                     </div>
                     <div class="email-cont from-field">
-                        <label for="email">Mail:</label>
+                        <label for="email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" requied>Mail:</label>
                         <input type="text">
                     </div>
                     <div class="addres-cont from-field">
-                        <label for="address">Address:</label>
+                        <label for="address" requied>Address:</label>
                         <input type="text">
                     </div>
                     <div class="payment-cont from-field">
-                        <label for="payment">Payment:</label>
+                        <label for="payment" required>Payment:</label>
                         <select name="payment" id="payment">
                             <option value="card">card</option>
                             <option value="cash">cash</option>
@@ -93,7 +89,7 @@
                             <option value="paypal">paypal</option>
                         </select>
                     </div>
-            </div>
+            </form>
         </div>
         <div class="product-buynow-layout buynow-from-layout">
             <div class="image-container">
@@ -149,7 +145,8 @@
         const buyNowCuant = document.getElementById('buynow-cuant')
         const buyNowTotal = document.getElementById('buynow-total')
         const buyNowDiscount = document.getElementById('discount-price')
-        console.log(product)
+        const buyNowConfirm = document.getElementById('confirm')
+        const buyNowCancel = document.getElementById('cancel')
 
         buyNowTitle.innerText = product.name;
         buyNowDesc.innerText = product.desc;
@@ -161,7 +158,40 @@
             buyNowDiscount.innerText = "$"+price.toString()
             buyNowPrice.classList.add('price-discounted')
         }
-        
+        const ValidateForm = () => {
+            //document.querySelector('#user-info').children[0].children[1].value
+            let form = document.getElementById('user-info')
+            let elements = form.children
+            console.log(elements)
+            for (let index = 0; index < elements.length; index++) {
+                let element = elements[index];
+                if (element[index].children[1].value === ""){
+                    return false
+                }
+                
+            }
+            return true
+            // console.log(values)
+        }
+        const SaleConfirmed = () => {
+            let dialog = document.createElement('dialog')
+            let message = document.createElement('h1')
+            let subtitle = document.createElement('h3')
+            dialog.classList.add('sale-dialog')
+            message.classList.add('sale-message')
+            message.innerText = "Sale Confirmed!"
+            subtitle.innerText = "you can track you shipp with our app"
+            subtitle.classList.add('sale-subtitle')
+            dialog.appendChild(message)
+            dialog.appendChild(subtitle)
+            document.body.appendChild(dialog)
+            dialog.showModal()
+            setTimeout(() => {
+                dialog.close()
+                window.location = window.location.origin
+                console.log('activate')
+            }, 2000)
+        }
         const UpdateTotal = () => {
             buyNowTotal.textContent = "$" + (Number(price) * Number(cuantity))
             buyNowCuant.innerText = cuantity.toString()
@@ -176,6 +206,7 @@
                 UpdateTotal()
             }
         }
+        buyNowConfirm.addEventListener('click', SaleConfirmed)
         UpdateTotal()
     </script>
 </body>

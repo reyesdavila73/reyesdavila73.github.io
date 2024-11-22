@@ -3,10 +3,14 @@ export default class ShopCart {
 
     }
     static addToCart(product){
+      console.log(product)
       let storage = [];
       let lastStorage = localStorage.getItem('shoppingCart')
-      if (lastStorage != 'null') {
+      console.log(lastStorage)
+      if (lastStorage != 'null' && lastStorage) {
         storage = JSON.parse(lastStorage)
+      } else {
+        this.resetCart()
       }
       storage.push(product)
       localStorage.setItem('shoppingCart', JSON.stringify(storage))

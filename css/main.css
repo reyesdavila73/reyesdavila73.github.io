@@ -229,6 +229,7 @@ nav {
 .browser-container{
     padding-bottom: 5px;
     align-items: center;
+    align-self: end;
     .browser-title{
         font-weight: 700;
         font-size: larger;
@@ -237,7 +238,7 @@ nav {
     }
     .browser-input{
         padding: 5px 10px;
-        border-radius: 15px;
+        border-radius: 5px;
         border: 0;
         font-size: medium;
     }
@@ -471,7 +472,7 @@ nav {
 .offer-head{
     /* background-color: gray; */
     background-color: var(--strong-bg);
-    padding: 5px;
+    padding: 15px;
     border-radius: 5px;
 }
 
